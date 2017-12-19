@@ -23,6 +23,8 @@ $EM_CONF[$_EXTKEY] = [
             'typo3' => '7.6.0-7.6.99',
         ],
         'conflicts' => [],
-        'suggests' => [],
+        'suggests' => [
+            'image_autoresize' => '',
+        ],
     ],
 ];

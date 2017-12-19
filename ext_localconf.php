@@ -20,5 +20,17 @@ call_user_func(
 
         $scOptions['t3lib/class.t3lib_tstemplate.php']['includeStaticTypoScriptSources'][] =
             \C3\Tibs\Hooks\TemplateServiceHook::class . '->includeStaticTypoScriptSources';
+
+        /** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher */
+        $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+            \TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class
+        );
+
+        $signalSlotDispatcher->connect(
+            \TYPO3\CMS\Core\Resource\ResourceStorage::class,
+            \TYPO3\CMS\Core\Resource\ResourceStorageInterface::SIGNAL_PreFileAdd,
+            \C3\Tibs\Slots\FileMetadata::class,
+            'removeMetadata'
+        );
     }
 );
