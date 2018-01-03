@@ -16,5 +16,13 @@ class FileMetadata extends FileUpload
         if (!empty(static::$metadata['ImageDescription'])) {
             static::$metadata['ImageDescription'] = null;
         }
+
+        if (!empty(static::$metadata['Model'])) {
+            static::$metadata['Model'] = null;
+        }
+
+        if (!empty(static::$metadata['Make'])) {
+            static::$metadata['Make'] = null;
+        }
     }
 }

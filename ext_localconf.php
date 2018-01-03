@@ -26,11 +26,15 @@ call_user_func(
             \TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class
         );
 
-        $signalSlotDispatcher->connect(
-            \TYPO3\CMS\Core\Resource\ResourceStorage::class,
-            \TYPO3\CMS\Core\Resource\ResourceStorageInterface::SIGNAL_PreFileAdd,
-            \C3\Tibs\Slots\FileMetadata::class,
-            'removeMetadata'
-        );
+        if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('image_autoresize')) {
+            // FileMetadata extends FileUpload of image_autoresize
+            // Avoid class not found exception, if image_autoresize doesn't exist
+            $signalSlotDispatcher->connect(
+                \TYPO3\CMS\Core\Resource\ResourceStorage::class,
+                \TYPO3\CMS\Core\Resource\ResourceStorageInterface::SIGNAL_PreFileAdd,
+                \C3\Tibs\Slots\FileMetadata::class,
+                'removeMetadata'
+            );
+        }
     }
 );
