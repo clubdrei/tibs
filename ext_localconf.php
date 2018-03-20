@@ -36,5 +36,10 @@ call_user_func(
                 'removeMetadata'
             );
         }
+        if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('mediace')) {
+            // Override MultimediaContentObject for better video support
+            $GLOBALS['TYPO3_CONF_VARS']['FE']['ContentObjects']['MULTIMEDIA'] = \C3\Tibs\ContentObject\MultimediaContentObject::class;
+        }
+
     }
 );
