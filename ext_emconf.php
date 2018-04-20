@@ -4,11 +4,11 @@
  * Extension Manager/Repository config file for ext "tibs".
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF['tibs'] = [
     'title' => 'TIBS',
     'description' => 'TYPO3 extension for TIBS',
     'category' => 'misc',
-    'version' => '0.0.4',
+    'version' => '0.0.5',
     'state' => 'stable',
     'uploadfolder' => 0,
     'createDirs' => '',
