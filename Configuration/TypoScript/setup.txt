@@ -3,6 +3,7 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:tibs/Configuration/TypoScript/Common/Table.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:tibs/Configuration/TypoScript/Common/Textpic.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:tibs/Configuration/TypoScript/Common/TtNews.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tibs/Configuration/TypoScript/Common/Perfectlightbox.ts">
 
 # Instance specific
 # <INCLUDE_TYPOSCRIPT: source="FILE:EXT:my_extension/Configuration/TypoScript/user.typoscript" condition="[loginUser = *]">

@@ -26,6 +26,7 @@ $EM_CONF[$_EXTKEY] = [
         'suggests' => [
             'image_autoresize' => '',
             'mediace' => '',
+            'perfectlightbox' => '',
         ],
     ],
 ];
